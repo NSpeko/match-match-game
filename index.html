@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main-style.css">
+    <script src="javascript/main-script.js"></script>
+    <script src="javascript/misc.js"></script>
+    <script src="javascript/spawn-cards-script.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<!-- The Log In Modal -->
+<div id="logInModal" class="modal inactive-modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="closeLogInModal">&times;</span>
+            <h2>Log In</h2>
+        </div>
+        <form name="logInForm" onsubmit="logUserInByForm()" method="post">
+            <div class="modal-body">
+                <label for="user-name-line">First Name:</label>
+                <input id="user-name-line" name="user-name-line" type="text" placeholder="Mike" autofocus/>
+                <label for="user-last-name-line">Last Name:</label>
+                <input id="user-last-name-line" name="user-last-name-line" type="text" placeholder="Wazowski"/>
+                <label for="user-email-line">Email:</label>
+                <input id="user-email-line" name="user-email-line" type="email" placeholder="default@email.com"/>
+            </div>
+            <div class="modal-footer">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- The Options Modal -->
+<div id="optModal" class="modal inactive-modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="closeOptModal">&times;</span>
+            <h2>Cards Back</h2>
+        </div>
+        <div class="modal-body">
+            <div class="card-back-example" style="background-image:url('resources/card-back-1.png');"
+                 onclick="changeCardBack(this);">
+            </div>
+            <div class="card-back-example" style="background-image:url('resources/Card-back-A-02.jpg');"
+                 onclick="changeCardBack(this);">
+            </div>
+            <div class="card-back-example" style="background-image:url('resources/card-back-3.png');"
+                 onclick="changeCardBack(this);">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- The Options Modal -->
+<div id="gameModeModal" class="modal inactive-modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="closeGameModeModal">&times;</span>
+            <h2>Game Mode</h2>
+        </div>
+        <div class="modal-body">
+            <button onclick="spawnCards(2,3); gameMode=6;">
+                2x3
+            </button>
+            <button onclick="spawnCards(3,4); gameMode=12;">
+                3x4
+            </button>
+            <button onclick="spawnCards(4,5); gameMode=20;">
+                4x5
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper-main">
+    <header>
+        <section class="container">
+            <h1>Match-Match Game</h1>
+            <nav>
+                <!-- Trigger/Open The Modal -->
+                <button id="logInBtn">Log In</button>
+                <button id="optBtn">Cards Back</button>
+                <button id="gameModeBtn">Game Mode</button>
+                <button id="faqBtn" onclick="showHowTo();">How To</button>
+            </nav>
+        </section>
+    </header>
+    <main class="container">
+        <span id="timeScore">Your Time:</span>
+        <section class="container" id="cardContainer">
+            <p>Welcome to "match-match" game!</p>
+            <h2>The Rules Are Simple:</h2>
+            <p>Match two cards to make them disappear.</p>
+            <p>Concentrate.</p>
+            <p>Stay still.</p>
+        </section>
+    </main>
+</div>
+<footer>
+    <section class="container">
+        <h2>Something</h2>
+    </section>
+</footer>
+</body>
+</html>
